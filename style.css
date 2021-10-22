@@ -1,0 +1,47 @@
+
+
+
+body {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    background-color: beige;
+    
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0px 0px;
+    margin-top: 20em;
+    
+
+}
+
+.grid {
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0.596);
+}
+
+#clear{
+    margin-top: 150px;
+    margin-right: 500px;
+    position: absolute;
+    font-size: 26px;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#sizeSlider {
+    margin-top: 150px;
+    margin-left: 500px;
+    position: absolute;
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+}
