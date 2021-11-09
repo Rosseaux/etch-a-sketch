@@ -1,31 +1,35 @@
-const gridContainer = document.createElement("div");
-let sizeSlider = document.querySelector("#sizeSlider");
-sizeSlider.value = "256";
+const gridContainer = document.querySelector(".gridContainer");
+const sizeSlider = document.querySelector(".sizeSlider");
+const resizeButton = document.querySelector("#resize");
+const colourButton = document.querySelector("#colour");
+const sizeValue = sizeSlider.value;
 
-gridContainer.className = "gridContainer"
-document.body.appendChild(gridContainer);
-for (i=0; i < sizeSlider.value; i++) {
-    let grid = document.createElement("div");
-    grid.className = "grid";
-    grid.addEventListener("mouseover", (colour => {
-        colour.target.style.backgroundColor = "aqua";
-    }));
-    gridContainer.appendChild(grid);
+gridCreate(16);
+
+
+//Creates a grid with a set value
+function gridCreate(cellCount) {
+    let gridSize = cellCount * cellCount;
+    for (let i = 0; i < gridSize; i++) {
+        let cell = document.createElement("div");
+        cell.className = "cell";
+        gridContainer.style.gridTemplateColumns = `repeat(${cellCount}, 1fr)`;
+        gridContainer.style.gridTemplateRows = `repeat(${cellCount}, 1fr)`;
+        gridContainer.appendChild(cell);
+        cell.addEventListener("mouseover", function(event) {
+            event.target.style.backgroundColor = "black";
+        })
+    }
+
 }
 
-const clearButton = document.createElement("button");
-clearButton.className = "button";
-clearButton.id = "clear";
-clearButton.textContent = "clear";
-clearButton.addEventListener("click", reset);
-document.body.appendChild(clearButton);
-
-
-
-
-function reset() {
-    let grid = document.querySelectorAll(".grid");
-    grid.forEach(cell => {
-        cell.style = "background-color: rgba(255, 255, 255, 0.596)";
-    })
+//clears grid, had to get some help from user Silende87's code with this one as I struggled.
+function clearGrid() {
+    gridContainer.innerHTML = "";
+    gridCreate(16);
 }
+
+const clearButton = document.querySelector("#clear");
+clearButton.addEventListener("click", () => {
+    clearGrid();
+});
