@@ -1,11 +1,15 @@
 const gridContainer = document.querySelector(".gridContainer");
-const sizeSlider = document.querySelector(".sizeSlider");
-const resizeButton = document.querySelector("#resize");
+let size = document.querySelector(".sizeSlider").value;
+
+
 const colourButton = document.querySelector("#colour");
-const sizeValue = sizeSlider.value;
 
-gridCreate(16);
+start();
 
+function start() {
+    gridCreate(size);
+    sliderDisplay();
+}
 
 //Creates a grid with a set value
 function gridCreate(cellCount) {
@@ -23,13 +27,42 @@ function gridCreate(cellCount) {
 
 }
 
+const resizeButton = document.querySelector("#resize");
+resizeButton.addEventListener("click", () => {
+    const resizeValue = document.querySelector(".sizeSlider").value;
+    resize(resizeValue);
+});
+
+
+
+
+
+
 //clears grid, had to get some help from user Silende87's code with this one as I struggled.
 function clearGrid() {
     gridContainer.innerHTML = "";
-    gridCreate(16);
+    gridCreate(size);
 }
 
 const clearButton = document.querySelector("#clear");
 clearButton.addEventListener("click", () => {
     clearGrid();
 });
+
+//size slider script
+function sliderDisplay() {
+    const sizeSlider = document.querySelector(".sizeSlider");
+    const sliderDisplay = document.querySelector("#display");
+    sliderDisplay.textContent = `Grid Size: ${sizeSlider.value}`;
+    sizeSlider.addEventListener("input", function() {
+        sliderDisplay.textContent = `Grid Size: ${sizeSlider.value}`;
+    });
+    
+}
+
+function resize() {
+    gridContainer.innerHTML = "";
+    size = document.querySelector(".sizeSlider").value;
+    gridCreate(size);
+}
+

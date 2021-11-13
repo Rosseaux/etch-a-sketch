@@ -21,6 +21,13 @@ body {
 
 }
 
+.buttonContainer {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+    margin-top: 3em;
+}
+
 .cell {
     
     background-color: rgba(255, 255, 255, 0.596);
@@ -28,16 +35,19 @@ body {
 
 .buttons {
     height: 100px;
-    width: 150px;
-    margin-top: 100px;
-    
+    width: 150px;    
+}
+
+.sizeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+    gap: 20px;
+    flex: 1;
+    width: 50em;
 }
 
 .sizeSlider {
-    position: fixed;
-    margin-top: 80em;
-    width: 34em;
-    height: 3em;
-    
-    
+    width: 60%;
 }

@@ -10,12 +10,20 @@
 </head>
 <body>
     <div class="settings">
-        <input class="sizeSlider" type="range" min="2" max ="100" value="16">
-        <button id="clear" class="buttons">clear</button>
-        <button id="colour" class="buttons">colour</button>
-        <button id="resize" class="buttons">resize</button>
+        
+        <div class="buttonContainer">
+            <button id="clear" class="buttons">clear</button>
+            <button id="colour" class="buttons">colour</button>
+            <button id="resize" class="buttons">resize</button>
+        </div>
+        
     </div>
     <div class="gridContainer"></div>
+    <div class="sizeContainer">
+        <input class="sizeSlider" type="range" min="2" max ="100" value="16" onmousemove="sizeSlider(this.value)"
+        onmousemove="sliderDisplay(this.value)">
+        <label id="display">Grid size: </label>
+    </div>  
     <script src="javascript.js"></script>
 </body>
 </html>
