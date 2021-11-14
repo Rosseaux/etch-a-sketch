@@ -5,7 +5,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    flex: auto;
+    flex: 1;
     justify-content: center;
     background-color: beige;
     align-items: center;
