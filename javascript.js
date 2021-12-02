@@ -1,7 +1,8 @@
 const gridContainer = document.querySelector(".gridContainer");
 let size = document.querySelector(".sizeSlider").value;
 let drawColour = document.querySelector("#colour").value;
-
+let drawStatus = true;
+window.addEventListener("keydown", keyInput);
 //initialise the grid on page load
 start();
 function start() {
@@ -18,11 +19,27 @@ function gridCreate(cellCount) {
         gridContainer.style.gridTemplateColumns = `repeat(${cellCount}, 1fr)`;
         gridContainer.style.gridTemplateRows = `repeat(${cellCount}, 1fr)`;
         gridContainer.appendChild(cell);
-        cell.addEventListener("mouseover", function(event) {
-            event.target.style.backgroundColor = drawColour;
-        });
+        drawOrNot();
     }
 }
+
+function keyInput(e) {
+    if (e.key === "d") {
+        drawStatus = true;
+    }
+    if (e.key === "a") console.log("a");
+}
+if (drawStatus === false) console.log("False");
+if (drawStatus === true) console.log("True");
+
+function drawOrNot() {
+    let cell = document.querySelectorAll(".cell");
+    if (drawStatus === true) {
+        cell[cell.length-1].addEventListener("mouseover", function(event) {
+            event.target.style.backgroundColor = drawColour;
+    })};
+    }
+
 
 //Colour switcher, proud of this as it doesn't re-set the grid allowing you to
 //use multiple colours on the drawing
