@@ -23,22 +23,33 @@ function gridCreate(cellCount) {
     }
 }
 
-function keyInput(e) {
-    if (e.key === "d") {
-        drawStatus = true;
+function changeStatus() {
+    if (drawStatus === true) {
+        drawStatus = false;
+        console.log(drawStatus);
     }
-    if (e.key === "a") console.log("a");
+    else if (drawStatus === false) {
+        drawStatus = true;
+        console.log(drawStatus);
+    }
 }
-if (drawStatus === false) console.log("False");
-if (drawStatus === true) console.log("True");
+
+function keyInput(e) {
+    if (e.key === "d") changeStatus();
+}
 
 function drawOrNot() {
     let cell = document.querySelectorAll(".cell");
     if (drawStatus === true) {
         cell[cell.length-1].addEventListener("mouseover", function(event) {
             event.target.style.backgroundColor = drawColour;
-    })};
+    })}
+    else if (drawStatus === false) {
+        cell[cell.length-1].removeEventListener("mouseover", function(event) {
+            event.target.style.backgroundColor = drawColour;
     }
+        )};
+}
 
 
 //Colour switcher, proud of this as it doesn't re-set the grid allowing you to
