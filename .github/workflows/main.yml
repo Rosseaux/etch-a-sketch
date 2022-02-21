@@ -14,8 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Publish to README.io
-      run: yarn install
-      run: node ./readmeio_publish.js
+      run: yarn install, node ./readmeio_publish.js
       env:
           RELEASE_NAME: ${{ github.event.release.name }}
           RELEASE_BODY: ${{ github.event.release.body }}
