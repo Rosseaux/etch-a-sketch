@@ -15,7 +15,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Publish to README.io
       run: |
-        yarn install
+        yarn install api --save
+        yarn install dotenv
         node ./readmeio_publish.js
       env:
           RELEASE_NAME: ${{ github.event.release.name }}
