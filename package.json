@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "api": "^4.2.0",
+    "dotenv": "^16.0.0"
+  },
+  "name": "etch-a-sketch",
+  "description": "A simple program designed to let you draw a sketch on a webpage!",
+  "version": "1.0.0",
+  "main": "javascript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rosseaux/etch-a-sketch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rosseaux/etch-a-sketch/issues"
+  },
+  "homepage": "https://github.com/Rosseaux/etch-a-sketch#readme"
+}
