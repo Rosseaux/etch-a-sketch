@@ -17,7 +17,7 @@ jobs:
       run: |
         npm install api --save
         npm install dotenv
-        node ./readmeio_publish.js
+        node readmeio_publish.js
       env:
           RELEASE_NAME: ${{ github.event.release.name }}
           RELEASE_BODY: ${{ github.event.release.body }}
