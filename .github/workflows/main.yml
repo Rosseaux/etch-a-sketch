@@ -15,14 +15,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Publish to README.io
       run: |
-        touch .env
-        echo README_TOKEN=
-        echo RELEASE_NAME=
-        echo RELEASE=BODY=
         npm install api --save
         npm install dotenv
         node readmeio_publish.js
       env:
           README_TOKEN: ${{ secrets.README_TOKEN }}
           RELEASE_NAME: ${{ github.event.release.name }}
+          RELEASE_TITLE: ${{ github.event.release.title }}
           RELEASE_BODY: ${{ github.event.release.body }}
