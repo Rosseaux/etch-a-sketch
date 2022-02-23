@@ -4,7 +4,7 @@ require('dotenv').config();
 sdk.auth(`${process.env['README_TOKEN']}`)
 sdk.createChangelog({
   hidden: false,
-  title: `${process.env['RELEASE_NAME']} :${process.env['RELEASE_TITLE']}`,
+  title: `${process.env['RELEASE_NAME']}: ${process.env['RELEASE_TITLE']}`,
   body: `${process.env['RELEASE_BODY']}`,
 })
   .then(res => console.log(res))
